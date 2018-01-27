@@ -29,8 +29,8 @@ public class WizardLogic : MonoBehaviour {
         }
         if (!alive)
         {
-            //UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
-            Debug.Log("DEAD!");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/GameOver");
+            //Debug.Log("DEAD!");
         }
     }
 
