@@ -59,6 +59,62 @@ public class CardManager : MonoBehaviour {
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            List<Card> cards = CardSlots[0].GetCardsFromTransform();
+            Card firstCard = cards[0];
+            foreach (Card card in cards)
+            {
+                if (card.transform.position.x < firstCard.transform.position.x)
+                {
+                    firstCard = card;
+                }
+            }
+            firstCard.GetComponent<Toggle>().isOn = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            List<Card> cards = CardSlots[0].GetCardsFromTransform();
+            Card lastCard = cards[0];
+            foreach (Card card in cards)
+            {
+                if (card.transform.position.x > lastCard.transform.position.x)
+                {
+                    lastCard = card;
+                }
+            }
+            lastCard.GetComponent<Toggle>().isOn = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            List<Card> cards = CardSlots[1].GetCardsFromTransform();
+            Card firstCard = cards[0];
+            foreach (Card card in cards)
+            {
+                if (card.transform.position.x < firstCard.transform.position.x)
+                {
+                    firstCard = card;
+                }
+            }
+            firstCard.GetComponent<Toggle>().isOn = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            List<Card> cards = CardSlots[1].GetCardsFromTransform();
+            Card lastCard = cards[0];
+            foreach (Card card in cards)
+            {
+                if (card.transform.position.x > lastCard.transform.position.x)
+                {
+                    lastCard = card;
+                }
+            }
+            lastCard.GetComponent<Toggle>().isOn = true;
+        }
+    }
+
     public void DrawCards()
     {
         List<GameObject> Cards = new List<GameObject>(this.Cards);
