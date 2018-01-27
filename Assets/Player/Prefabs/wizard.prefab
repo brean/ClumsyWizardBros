@@ -38,6 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4267742758711456}
+  - component: {fileID: 114442958391559980}
   m_Layer: 0
   m_Name: wizard
   m_TagString: Untagged
@@ -107,6 +108,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.35128146}
   serializedVersion: 2
   m_Radius: 1.1071094
+--- !u!114 &114442958391559980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1610582442986580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5dd9b935be92c4babc33e2daad61ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wobbleX: 1
+  wobbleY: 0
 --- !u!114 &114692978683721690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,6 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0f817cda0682948a7e7e5a94b7c1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardManager: {fileID: 0}
+  Slot: {fileID: 0}
 --- !u!212 &212721891422679530
 SpriteRenderer:
   m_ObjectHideFlags: 1

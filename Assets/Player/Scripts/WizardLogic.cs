@@ -5,11 +5,19 @@ using UnityEngine;
 public class WizardLogic : MonoBehaviour {
     public CardManager cardManager;
 
+    public MapGeneraton mapGen;
+
     public CardSlot Slot;
+
+    [Tooltip("# of units ontop of map.Height to Show winning screen (map.Height just is the height to the last obstacle)")]
+    public float OverPosition = 4f;
 
     private void Start()
     {
         cardManager = cardManager == null ? GameObject.Find("UICards").GetComponent<CardManager>() : cardManager;
+
+        // we need the height for the map, lets assume both maps have the same height and we just use the right one.
+        mapGen = mapGen == null ? GameObject.Find("MapRight").GetComponent<MapGeneraton>() : mapGen;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,12 +38,15 @@ public class WizardLogic : MonoBehaviour {
         if (!alive)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/GameOver");
-            //Debug.Log("DEAD!");
         }
     }
 
     // Update is called once per frame
     void Update () {
-		// TODO: check, if player already at or after goal position
+        // Check, if player already at or after goal position
+        if ((mapGen.Height + OverPosition) + mapGen.transform.position.y < 0)
+        {
+             UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Win");
+        }
 	}
 }

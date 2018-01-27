@@ -10,7 +10,7 @@ public class MapGeneraton : MonoBehaviour {
     private List<KeyValuePair<int, GameObject>> map = new List<KeyValuePair<int, GameObject>>();
 
     // height of the map
-    private float Height = 0;
+    public float Height = 0;
 
     public void ResetMap()
     {
@@ -27,7 +27,6 @@ public class MapGeneraton : MonoBehaviour {
         float localHeight = 6.0f; //fixed distance between elements @ 6 unity units, alternative: go.GetComponent<BoxCollider2D>().size.y;
         go.transform.position = new Vector3(transform.position.x, EmptyBeforeMapStart + Height + localHeight / 2, 0);
         go.SetActive(true);
-        
         Height += localHeight;
     }
 
