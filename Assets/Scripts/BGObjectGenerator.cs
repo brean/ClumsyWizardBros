@@ -15,6 +15,8 @@ public class BGObjectGenerator : MonoBehaviour {
 	public Sprite partyhatsSprite_2;
 	public Sprite villagerSprite;
 
+    public float StoneSize = 100;
+
 	private float lastTimestamp;
 
 	// wrapper that will hold all rendered Sprites
@@ -22,7 +24,7 @@ public class BGObjectGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.bgWrap = GameObject.Find ("BG_Wrap");
+		this.bgWrap = this.bgWrap == null ? GameObject.Find("BG_Wrapper") : this.bgWrap; 
 		this.lastTimestamp = Time.time;
 	}
 
@@ -43,19 +45,19 @@ public class BGObjectGenerator : MonoBehaviour {
 		res.transform.parent = this.bgWrap.transform;
 		res.name = res.GetInstanceID ().ToString ();
 
-		float spriteX = Random.Range(-900, 900);
-		if (spriteX > -160 && spriteX < 160) {
+		float spriteX = Random.Range(-500, 500);
+		if (spriteX > -StoneSize && spriteX < StoneSize) {
 			if (spriteX > 0) {
-				spriteX = 160;
+				spriteX = StoneSize;
 			} else {
-				spriteX = -160;
+				spriteX = -StoneSize;
 			}
 		}
 
-		Vector3 spritePos = new Vector3(spriteX, 1000, 999);
+		Vector3 spritePos = new Vector3(spriteX, 1000, 0);
 		Vector3 spriteRot = new Vector3 (0, 0, Random.Range (0, 359));
 
-		res.transform.position = spritePos;
+		res.transform.localPosition = spritePos;
 		res.transform.Rotate (spriteRot);
 
 

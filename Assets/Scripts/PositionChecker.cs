@@ -19,11 +19,11 @@ public class PositionChecker : MonoBehaviour {
 			return;
 		}
 
-		if (this.transform.position.y < this.minPos) {
+		if (this.transform.localPosition.y < this.minPos) {
 			Camera.main.GetComponent<BGObjectGenerator> ().removeSprite (this.gameObjKey);
 		}
 
-		this.transform.position -= this.yPosDelta;
+		this.transform.localPosition -= this.yPosDelta;
 	}
 
 	public void setGOKey(string key) {
