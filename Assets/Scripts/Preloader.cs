@@ -12,8 +12,14 @@ public class Preloader : MonoBehaviour {
 	private float minimumLogoTime = 3.0f; //Minimum time of that scene
 
 	private void Start(){
-		//Grab the only CanvasGroup in the scene - would lead to trouble if we would have more
-		fadeGroup = FindObjectOfType<CanvasGroup>();
+        //Grab the only CanvasGroup in the scene - would lead to trouble if we would have more
+        fadeGroup = MenuScene.FindCanvasGroup(GameObject.Find("Canvas").transform);
+        if (fadeGroup == null)
+        {
+            Debug.LogWarning("can not find CanvasGroup (for fading in scene " + gameObject.scene.name + ")!");
+            return;
+        }
+        fadeGroup.gameObject.SetActive(true);
 
 		//Start with white screen
 		fadeGroup.alpha = 1;
@@ -30,9 +36,12 @@ public class Preloader : MonoBehaviour {
 	}
 
 	private void Update(){
+        if (fadeGroup == null) {
+            return;
+        }
 
-		//Fade-In
-		if (Time.time < minimumLogoTime) {
+        //Fade-In
+        if (Time.time < minimumLogoTime) {
 			fadeGroup.alpha = 1 - Time.time;
 		}
 

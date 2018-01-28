@@ -6,9 +6,7 @@ public class MenuScene : MonoBehaviour {
 	private CanvasGroup fadeGroup;
 	private float fadeInSpeed = 0.33f;
 
-    /*
-     * TODO:
-    private CanvasGroup FindCanvasGroup(Transform parent)
+    public static CanvasGroup FindCanvasGroup(Transform parent)
     {
         CanvasGroup grp = parent.GetComponent<CanvasGroup>();
         if (grp != null)
@@ -18,30 +16,27 @@ public class MenuScene : MonoBehaviour {
         foreach (Transform child in parent)
         {
             grp = FindCanvasGroup(child);
-            if (child != null)
+            if (grp != null)
             {
                 return grp;
             }
         }
-        return grp;
+        return null;
     }
-    */
 
 	// Use this for initialization
 	private void Start () {
         //Grab the only CanvasGroup in the scene - would lead to trouble if we would have more
         //fadeGroup = FindCanvasGroup(transform);
-        fadeGroup = FindObjectOfType<CanvasGroup>();
+        fadeGroup = FindCanvasGroup(GameObject.Find("Canvas").transform);
         if (fadeGroup == null)
         {
-            Debug.LogWarning("can not find CanvasGroup (for fading)!");
+            Debug.LogWarning("can not find CanvasGroup (for fading in scene " + gameObject.scene.name + ")!");
+            return;
         }
-        else
-        {
-            //Start with white screen
-            fadeGroup.alpha = 1;
-        }
-
+        fadeGroup.gameObject.SetActive(true);
+        //Start with white screen
+        fadeGroup.alpha = 1;
 	}
 
 	// Update is called once per frame
