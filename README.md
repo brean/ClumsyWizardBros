@@ -12,7 +12,7 @@ Credits
 Team
 ====
 
- - Andreas Bresser – Wizard for Technical Functionality (W.T.F.)
+ - [Andreas Bresser](https://github.com/brean/) – Wizard for Technical Functionality (W.T.F.)
  - Filiz Resim – Willhelm Scream Conductor (Sound Design Artist), Professional Nagger
  - Kim Korsching – Lead Orc Butt Designer (Character Artist)
  - Lena Herkommer – Creator of Worlds (Background Artist), Master of Disaster (Controller Support)
