@@ -64,28 +64,16 @@ public class MoveScript : MonoBehaviour {
 			if(this.isPlayerOne) {
 				Debug.Log("P1 pressed triangle");
 			 	List<Card> cards = this.cardManager.CardSlots[0].GetCardsFromTransform();
-				Card middleCard = cards[0];
-				Card leftCard = cards [1];
+				Card middleCard = cards[1];
+				Card leftCard = cards [0];
 				Card rightCard = cards [2];
-				foreach (Card card in cards)
-				{
-					if ((card.transform.position.x < leftCard.transform.position.x && card.transform.position.x > rightCard.transform.position.x)||(card.transform.position.x > leftCard.transform.position.x && card.transform.position.x < rightCard.transform.position.x)){
-						middleCard = card;
-					}
-				}
 				middleCard.GetComponent<Toggle>().isOn = true;
 			} else {
 				Debug.Log("P2 pressed triangle");
 				List<Card> cards = this.cardManager.CardSlots[1].GetCardsFromTransform();
-				Card middleCard = cards[0];
-				Card leftCard = cards [1];
+				Card middleCard = cards[1];
+				Card leftCard = cards [0];
 				Card rightCard = cards [2];
-				foreach (Card card in cards)
-				{
-					if ((card.transform.position.x < leftCard.transform.position.x && card.transform.position.x > rightCard.transform.position.x)||(card.transform.position.x > leftCard.transform.position.x && card.transform.position.x < rightCard.transform.position.x)){
-						middleCard = card;
-					}
-				}
 				middleCard.GetComponent<Toggle>().isOn = true;
 			}
 			
