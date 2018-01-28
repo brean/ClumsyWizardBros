@@ -168,17 +168,17 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
+    m_Font: {fileID: 12800000, guid: 22b5c59d9bbd549c18e52f485ab78255, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Credits
 --- !u!222 &83223481
@@ -1530,8 +1530,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000009909619}
-  m_SizeDelta: {x: 0, y: 503.21674}
+  m_AnchoredPosition: {x: 60.65, y: 0.000074239055}
+  m_SizeDelta: {x: -121.3, y: 1508.5037}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1430310371
 MonoBehaviour:
@@ -1674,8 +1674,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 333.5, y: -251.60837}
-  m_SizeDelta: {x: 627, y: 463.21674}
+  m_AnchoredPosition: {x: 272.85, y: -754.25183}
+  m_SizeDelta: {x: 505.7, y: 1468.5037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1635569656
 MonoBehaviour:
@@ -1697,11 +1697,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_Font: {fileID: 12800000, guid: 22b5c59d9bbd549c18e52f485ab78255, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1709,27 +1709,31 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "In order to bring this app to live I used the graphics \u201CStarship Security
-    Officer\u201D as well as the \u201CStarship Pilot\u201D both created by Justin
-    Nichol and published under the license of CC-BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-    and GPL 3.0 (http://www.gnu.org/licenses/gpl-3.0.html) which allowed me to share
-    and adapt his work for any purpose. In order to make this graphics fit into my
-    application I resized them. In addition to that I edited the graphic of the \u201CStarship
-    Pilot\u201D by erasing some parts of the graphic, mirroring it and changing the
-    colors. The original graphics can be found on opengameart.org. \r\n\r\nAll resource
-    icons used are taken from game-icons.net and were published under the license
-    of CC-BY 3.0 (https://creativecommons.org/licenses/by/3.0/) which allowed me to
-    share and adapt his work for any purpose.  In order to make this graphics fit
-    to my design I edited some of the graphics by erasing parts and replacing parts.\r\n\nThe
-    app includes sound effects which I did not compose and which are published under
-    Attribution 3.0 (https://creativecommons.org/licenses/by/3.0/). I did not edit
-    the files. Every sound used is equal to the sound found under the given source.\r\n\r\nThe
-    sound playing in the main menu is called \u201CAstronaut Breathing\u201D and was
-    recorded by Mike Koenig and was found on http://soundbible.com\r\n\r\nThe sound
-    playing when a planet was found is called \u201CText Message Alert 5\u201D and
-    was recorded by Daniel Simion and was found on http://soundbible.com\r\n\r\nThe
-    sound playing when mining for resources is called \u201CElectricity\u201D and
-    was recorded by Mike Koenig and was found on http://soundbible.com"
+  m_Text: "Team\n\nAndreas Bresser \u2013 Wizard for Technical Functionality (W.T.F.)\n\nFiliz
+    Resim \u2013 Willhelm Scream Conductor (Sound Design Artist), Professional Nagger\n\nKim
+    Korsching \u2013 Lead Orc Butt Designer (Character Artist)\n\nLena Herkommer \u2013
+    Creator of Worlds (Background Artist), Master of Disaster (Controller Support)\n\nNils
+    H\xF6gemann \u2013 Professional UI Dabbler, Odd-Job Man\n\nHendrick Nickelmann
+    \u2013 Decorative Accessory with Function, Novice of Disaster\n\n\n\nAsset Credits:
+    \  \n\nFor the creation of our game we came back to a diversity of assets which
+    we do not own the rights to. These assets are listed in the following.\n\nSound:\n\n
+    \   Steven O\u2019Brian - Majestic Epic Orchestral Piece, found on: https://soundcloud.com/stevenobrien/majestic-epic-orchestral-piece
+    (used during story)\n    \"Playful Angel\" from the Angels & Demons FREE from
+    the Unity Asset Store (used during main game)\n    \"Glorious Archangel March\"
+    from the Angels & Demons FREE from the Unity Asset Store (used during menu)\n
+    \   Various Sound Effects by and found on: https://www.zapsplat.com\n    \"Fight
+    2 People Kick Punch Sound Effect Audio\" which is copyrighted by RNaudioproductions
+    Robert Nichol Audio - AudioProductions 2005 (modified, used during game over)\n
+    \   \"Fanfare Trumpet Announcement sound effects # 026\" by Free Sound Effects,
+    found on: https://www.youtube.com/watch?v=0PfB16pyrBk\n\nFonts: \n\n    \"Ringbearer\"
+    created by thehutt, found on: http://www.1001fonts.com/ringbearer-font.html\n\nIcons:\n\nIcons
+    used for the game buttons in the main game scene are taken from http://game-icons.net
+    and are published under Attribution 3.0 Unported (CC BY 3.0). The following game
+    icons were used \u201CDroplets\u201D, \u201CMountain Top\u201D, \u201CThree Leaves\u201D,
+    \u201CWindy Stripes\u201D by Lorc and \u201CFire\u201D and \u201CElectric Icon\u201D
+    by Sbed and adopted in their look in order to match the games general look and
+    feel.\n\n\n\nSpecial Thanks to:\n\nNora Malaka who supported us during the conception
+    and design phase. We thank you for your great ideas!"
 --- !u!222 &1635569657
 CanvasRenderer:
   m_ObjectHideFlags: 0
