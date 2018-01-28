@@ -26,8 +26,7 @@ public class MenuScene : MonoBehaviour {
 
 	// Use this for initialization
 	private void Start () {
-        //Grab the only CanvasGroup in the scene - would lead to trouble if we would have more
-        //fadeGroup = FindCanvasGroup(transform);
+        //Grab the only CanvasGroup in the scene - would lead to trouble if we would have more than one
         fadeGroup = FindCanvasGroup(GameObject.Find("Canvas").transform);
         if (fadeGroup == null)
         {
@@ -38,12 +37,13 @@ public class MenuScene : MonoBehaviour {
         //Start with white screen
         fadeGroup.alpha = 1;
 	}
-
-	// Update is called once per frame
+    
 	private void Update () {
-		//Fade-In
-        if (fadeGroup != null)
-		    fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
+        //Fade-In
+        if (fadeGroup != null && fadeGroup.alpha >= 0)
+        {
+            float newAlpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
+            fadeGroup.alpha = newAlpha < 0 ? 0 : newAlpha;
+        }
 	}
-	
 }
