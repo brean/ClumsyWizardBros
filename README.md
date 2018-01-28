@@ -7,6 +7,18 @@ Description
 -----------
 The Clumsy Wizard Brothers gave a big house party to celebrate the harmony between the magical and the human world. For this occasion they made their favorite drink for everyone to enjoy. Unfortunately, not everyone handled it so well. The humans had the worst hangover in history and the orcs... well, they got aggressive and wanted more. But the Clumsy Brothers fear no evil. They are the only ones who can brew the potion to get everything back to normal! In order to reach the Wizard HQ and brew the potion two players need to play cooperatively and help the Clumsy Brothers to overcome various elemental obstacles. Since the Clumsy Brothers are extremely forgetful, they can only use spells when they have the right spell book. The players need to exchange their magic spells correctly so each brother has the right elemental spell to overcome the next obstacle. Don’t dawdle! The orcs are hot on your trail and will catch up if you are too slow. Also, better watch your step because the path is full of passed out humans and poisonous bushes. Bring both brothers safely to the Wizard HQ to save the day!
 
+How to Play
+-----------
+The game is meant to be played by two players on one computer. One player controls the purple wizard brother shown on the left side of the screen, the other one the blue wizard on the right. You can either use two Gamepads or a keyboard.
+
+In the bottom of the game screen you see all 6 spells the two wizards know of. Because they have to carry all the ingredients for the hangover cure spell they can only handle 3 spells at a time and have to share. The 3 spells on the left side on the screen are carried by the purple wizard on the left, the 3 on the right by the blue wizard on the right. The red spell with the flame icon is against fire for example. So if a fire is shown on the left side and the player controlling the left wizard does not have the fire-spell he needs to switch something with the other player. The wizards will exchange selected spells shortly before they the obstacle is to near.
+
+On the Gamepad you can use the upper 3 keys (square, circle and triangle) to select a spell to switch and the keyboard users have 1, 2, 3 for the left and 8, 9, 0 for the right player. Both players need to select a spell so the wizards will exchange them. If only one spell is selected they will both keep their spells when they hit the obstacle.
+
+Because the player also need to avoid random obstacles like bushes, bottles or drunk party people that lay round on the way of the wizards the player can control his wizard using the thumbstick on the gamepad or the 'a' and 'd' keys for the left wizard as well as the left and right arrow keys for the right one.
+
+Have fun playing!
+
 Credits 
 -------
 Team
