@@ -18,90 +18,39 @@ public class MoveScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 moveDir = Vector3.zero;
-		if (isPlayerOne) {
-			moveDir.x = Input.GetAxis ("HorizontalP1");
-			// moveDir.z = Input.GetAxis ("VerticalP1");
-		} else {
-			moveDir.x = Input.GetAxis ("HorizontalP2");
-			// moveDir.z = Input.GetAxis ("VerticalP2");
-		}
+        string p = isPlayerOne ? "P1" : "P2";
+        moveDir.x = Input.GetAxis ("Horizontal" + p);
+        moveDir *= speed * Time.deltaTime;
 
-		// move this object at frame rate independent speed:
-		transform.position += moveDir * speed * Time.deltaTime;
+        if (transform.localPosition.x + moveDir.x > 2f ||
+            transform.localPosition.x + moveDir.x < -2f)
+        {
+            return;
+        }
 
-		bool isSquareDown = (this.isPlayerOne && Input.GetButton("SquareP1")) || (!this.isPlayerOne && Input.GetButton("SquareP2"));
-		bool isTriangleDown = (this.isPlayerOne && Input.GetButton ("TriangleP1")) || (!this.isPlayerOne && Input.GetButton ("TriangleP2"));
-		bool isCircleDown = (this.isPlayerOne && Input.GetButton ("CircleP1")) || (!this.isPlayerOne && Input.GetButton ("CircleP2"));
+        // move this object at frame rate independent speed:
+        transform.position += moveDir;
 
-		if(isSquareDown && buttonUp){
+        bool isSquareDown = Input.GetButton("Square" + p);
+		bool isTriangleDown = Input.GetButton("Triangle" + p);
+		bool isCircleDown = Input.GetButton("Circle" + p);
+
+        List<Card> cards = this.cardManager.CardSlots[this.isPlayerOne ? 0 : 1].GetCardsFromTransform();
+        Card middleCard = cards[1];
+        Card leftCard = cards[0];
+        Card rightCard = cards[2];
+
+        if (isSquareDown && buttonUp){
 			buttonUp = false;
-
-			if (this.isPlayerOne) {
-				List<Card> cards = this.cardManager.CardSlots [0].GetCardsFromTransform ();
-				Card firstCard = cards [0];
-				foreach (Card card in cards) {
-					if (card.transform.position.x < firstCard.transform.position.x) {
-						firstCard = card;
-					}
-				}
-				firstCard.GetComponent<Toggle> ().isOn = true;
-			} else {
-				List<Card> cards = this.cardManager.CardSlots[1].GetCardsFromTransform();
-				Card firstCard = cards[0];
-				foreach (Card card in cards)
-				{
-					if (card.transform.position.x < firstCard.transform.position.x)
-					{
-						firstCard = card;
-					}
-				}
-				firstCard.GetComponent<Toggle>().isOn = true;
-			}
-
+            leftCard.GetComponent<Toggle>().isOn = true;
 		}
 		else if(isTriangleDown && buttonUp){
 			buttonUp = false;
-			if(this.isPlayerOne) {
-				Debug.Log("P1 pressed triangle");
-			 	List<Card> cards = this.cardManager.CardSlots[0].GetCardsFromTransform();
-				Card middleCard = cards[1];
-				Card leftCard = cards [0];
-				Card rightCard = cards [2];
-				middleCard.GetComponent<Toggle>().isOn = true;
-			} else {
-				Debug.Log("P2 pressed triangle");
-				List<Card> cards = this.cardManager.CardSlots[1].GetCardsFromTransform();
-				Card middleCard = cards[1];
-				Card leftCard = cards [0];
-				Card rightCard = cards [2];
-				middleCard.GetComponent<Toggle>().isOn = true;
-			}
-			
+            middleCard.GetComponent<Toggle>().isOn = true;
 		}
 		else if(isCircleDown && buttonUp){
 			buttonUp = false;
-
-			if (this.isPlayerOne) {
-				List<Card> cards = this.cardManager.CardSlots [0].GetCardsFromTransform ();
-				Card lastCard = cards [0];
-				foreach (Card card in cards) {
-					if (card.transform.position.x > lastCard.transform.position.x) {
-						lastCard = card;
-					}
-				}
-				lastCard.GetComponent<Toggle> ().isOn = true;
-			} else {
-				List<Card> cards = this.cardManager.CardSlots[1].GetCardsFromTransform();
-				Card lastCard = cards[0];
-				foreach (Card card in cards)
-				{
-					if (card.transform.position.x > lastCard.transform.position.x)
-					{
-						lastCard = card;
-					}
-				}
-				lastCard.GetComponent<Toggle>().isOn = true;
-			}
+            rightCard.GetComponent<Toggle>().isOn = true;
 		}
 		else if(!isSquareDown && !isTriangleDown && !isCircleDown && !buttonUp){
 			buttonUp = true;
