@@ -40,26 +40,49 @@ public class BGObjectGenerator : MonoBehaviour {
 		GameObject.Destroy (GameObject.Find(spriteKey));
 	}
 
+    private void calculatePosition(GameObject res) {
+        float spriteX = Random.Range(-500, 500);
+        if (spriteX > -StoneSize && spriteX < StoneSize)
+        {
+            if (spriteX > 0)
+            {
+                spriteX = StoneSize;
+            }
+            else
+            {
+                spriteX = -StoneSize;
+            }
+        }
+
+        Vector3 spritePos = new Vector3(spriteX, 1000, 0);
+        Vector3 spriteRot = new Vector3(0, 0, Random.Range(0, 359));
+
+        res.transform.localPosition = spritePos;
+        res.transform.Rotate(spriteRot);
+
+        // check if we should appear ontop of some other object
+        /*
+        BoxCollider2D spriteCollider = res.GetComponent<BoxCollider2D>();
+        RaycastHit2D hit = Physics2D.BoxCast(
+            new Vector2(
+                res.transform.position.x,
+                res.transform.position.y),
+            spriteCollider.size,
+            0.0f,
+            new Vector2());
+        if (hit.collider != null)
+        {
+            Debug.Log("REPOSITION!");
+            // we hit sth. reposition!
+            calculatePosition(res);
+        }
+        */
+    }
+
 	private GameObject generateGO(int newSprite) {
 		GameObject res = new GameObject ();
 		res.transform.parent = this.bgWrap.transform;
 		res.name = res.GetInstanceID ().ToString ();
-
-		float spriteX = Random.Range(-500, 500);
-		if (spriteX > -StoneSize && spriteX < StoneSize) {
-			if (spriteX > 0) {
-				spriteX = StoneSize;
-			} else {
-				spriteX = -StoneSize;
-			}
-		}
-
-		Vector3 spritePos = new Vector3(spriteX, 1000, 0);
-		Vector3 spriteRot = new Vector3 (0, 0, Random.Range (0, 359));
-
-		res.transform.localPosition = spritePos;
-		res.transform.Rotate (spriteRot);
-
 
 		SpriteRenderer sr = res.AddComponent<SpriteRenderer> ();
 		PositionChecker posChecker = res.AddComponent<PositionChecker> ();
@@ -103,7 +126,7 @@ public class BGObjectGenerator : MonoBehaviour {
 			sr.transform.localScale = new Vector3 (1.3f, 1.3f, 1);
 			break;
 		}
-
-		return res;
+        calculatePosition(res);
+        return res;
 	}
 }

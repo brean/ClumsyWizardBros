@@ -19,9 +19,18 @@ public class CardManager : MonoBehaviour {
     [Tooltip("UI-Container that we can add the ui-elements of the cards to (one for each player)")]
     public List<CardSlot> CardSlots;
 
+    public GameObject swapAnimation;
+
     private void Start()
     {
         DrawCards();
+    }
+
+    private void ShowSwitchAnimation()
+    {
+        swapAnimation.SetActive(true);
+        //swapAnimation.GetComponent<Animator>().Play("Entry", 0);
+        //swapAnimation.GetComponent<Animator>().playbackTime = 0;
     }
 
     // move cards around (OWNLY WORKS FOR 2 PLAYERS!)
@@ -36,8 +45,8 @@ public class CardManager : MonoBehaviour {
             // TODO: Animation
             return;
         }
-        // TODO: Animation
-
+        // Animation
+        ShowSwitchAnimation();
 
         selectedOne.transform.SetParent(slotTwo.transform);
         selectedTwo.transform.SetParent(slotOne.transform);
