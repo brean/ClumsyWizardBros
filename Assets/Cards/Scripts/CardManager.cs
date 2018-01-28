@@ -74,7 +74,21 @@ public class CardManager : MonoBehaviour {
             }
             firstCard.GetComponent<Toggle>().isOn = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+		else if (Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			List<Card> cards = CardSlots[0].GetCardsFromTransform();
+			Card middleCard = cards[0];
+			Card leftCard = cards [1];
+			Card rightCard = cards [2];
+			foreach (Card card in cards)
+			{
+				if ((card.transform.position.x < leftCard.transform.position.x && card.transform.position.x > rightCard.transform.position.x)||(card.transform.position.x > leftCard.transform.position.x && card.transform.position.x < rightCard.transform.position.x)){
+					middleCard = card;
+				}
+			}
+			middleCard.GetComponent<Toggle>().isOn = true;
+		}
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             List<Card> cards = CardSlots[0].GetCardsFromTransform();
             Card lastCard = cards[0];
@@ -87,7 +101,7 @@ public class CardManager : MonoBehaviour {
             }
             lastCard.GetComponent<Toggle>().isOn = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha9))
+        else if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             List<Card> cards = CardSlots[1].GetCardsFromTransform();
             Card firstCard = cards[0];
@@ -100,6 +114,20 @@ public class CardManager : MonoBehaviour {
             }
             firstCard.GetComponent<Toggle>().isOn = true;
         }
+		else if (Input.GetKeyDown(KeyCode.Alpha9))
+		{
+			List<Card> cards = CardSlots[0].GetCardsFromTransform();
+			Card middleCard = cards[0];
+			Card leftCard = cards [1];
+			Card rightCard = cards [2];
+			foreach (Card card in cards)
+			{
+				if ((card.transform.position.x < leftCard.transform.position.x && card.transform.position.x > rightCard.transform.position.x)||(card.transform.position.x > leftCard.transform.position.x && card.transform.position.x < rightCard.transform.position.x)){
+					middleCard = card;
+				}
+			}
+			middleCard.GetComponent<Toggle>().isOn = true;
+		}
         else if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             List<Card> cards = CardSlots[1].GetCardsFromTransform();
