@@ -33,7 +33,7 @@ public class LocalizedText : MonoBehaviour {
 		Text text = FindText(transform);
         if (text != null)
         {
-            text.text = LocalizationManager.instance.GetLocalizedValue(key);
+            text.text = LocalizationManager.Instance.GetLocalizedValue(key);
         } else
         {
             Debug.LogWarning("Can not translate " + key + " no text attached to GameObject" + gameObject.name + "!");

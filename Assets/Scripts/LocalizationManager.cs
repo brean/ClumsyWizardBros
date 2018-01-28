@@ -2,29 +2,52 @@
 using System.Collections.Generic;
 using System.IO;
 
-public class LocalizationManager : MonoBehaviour {
+[System.Serializable]
+public enum Language { German, English };
 
-	public static LocalizationManager instance;
+public class LocalizationManager {
 
-	private Dictionary<string, string> localizedText;
-	private bool isReady = false;
-	private string missingTextString = "Localized Text not found";
 
-	// Use this for initialization
-	void Awake () {
-		if (instance == null) {
-			instance = this;
-		} else if(instance != this) {
-			Destroy (gameObject);
-		}
+    private static LocalizationManager instance;
 
-		DontDestroyOnLoad (gameObject);
-	}
-	
+    private Dictionary<string, string> localizedText;
+    private bool isReady = false;
+    private string missingTextString = "Localized Text not found";
 
-	public void loadLocalizedText (string fileName){
+    public LocalizationManager(Language language)
+    {
+        loadLocalizedText(language);
+    }
 
-		localizedText = new Dictionary<string, string>();
+    public static LocalizationManager Instance {
+        get {
+            if (instance == null)
+            {
+                Debug.LogWarning("Localization manager not set, fallback to english translation");
+                instance = new LocalizationManager(Language.English);
+            }
+            return instance;
+        }
+
+        set {
+            instance = value;
+        }
+    }
+
+	public void loadLocalizedText (Language language){
+        string lang = "en";
+        switch (language)
+        {
+            case Language.German:
+                lang = "de";
+                break;
+            default:
+                lang = "en";
+                break;
+        }
+        string fileName = "localizedText_" + lang + ".json";
+
+        localizedText = new Dictionary<string, string>();
 		string filePath = Path.Combine (Application.streamingAssetsPath, fileName);
 		if (File.Exists (filePath)) {
 			string dataAsJson = File.ReadAllText (filePath);
@@ -43,10 +66,10 @@ public class LocalizationManager : MonoBehaviour {
 		isReady = true;
 	}
 
-	public string GetLocalizedValue(string key){
+    public string GetLocalizedValue(string key){
 		string result = missingTextString;
-		if(localizedText.ContainsKey(key)){
-			result = localizedText [key];
+		if(instance.localizedText.ContainsKey(key)){
+			result = instance.localizedText [key];
 		}
 
 		return result;
