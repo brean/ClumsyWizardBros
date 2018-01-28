@@ -75,6 +75,7 @@ namespace UnityEngine.UI.Extensions
 
                 // automatically set scaling
                 _particleSystem.scalingMode = ParticleSystemScalingMode.Local;
+                
 
                 _particles = null;
                 setParticleSystemMaterial = true;

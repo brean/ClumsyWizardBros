@@ -473,6 +473,21 @@ Prefab:
       propertyPath: distance.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 58485604757813038, guid: 9a459ef7232dbc0438a71998774686d5,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 58485604757813038, guid: 9a459ef7232dbc0438a71998774686d5,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -1.714784
+      objectReference: {fileID: 0}
+    - target: {fileID: 58485604757813038, guid: 9a459ef7232dbc0438a71998774686d5,
+        type: 2}
+      propertyPath: m_Radius
+      value: 2.7205522
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 95735135076586818, guid: 9a459ef7232dbc0438a71998774686d5, type: 2}
     - {fileID: 114442958391559980, guid: 9a459ef7232dbc0438a71998774686d5, type: 2}
@@ -1177,6 +1192,21 @@ Prefab:
     - target: {fileID: 1610582442986580, guid: 9a459ef7232dbc0438a71998774686d5, type: 2}
       propertyPath: m_Name
       value: wizard_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 58485604757813038, guid: 9a459ef7232dbc0438a71998774686d5,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -1.714784
+      objectReference: {fileID: 0}
+    - target: {fileID: 58485604757813038, guid: 9a459ef7232dbc0438a71998774686d5,
+        type: 2}
+      propertyPath: m_Radius
+      value: 2.7205522
+      objectReference: {fileID: 0}
+    - target: {fileID: 58485604757813038, guid: 9a459ef7232dbc0438a71998774686d5,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a459ef7232dbc0438a71998774686d5, type: 2}
