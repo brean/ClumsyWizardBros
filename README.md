@@ -11,11 +11,11 @@ How to Play
 -----------
 The game is meant to be played by two players on one computer. One player controls the purple wizard brother shown on the left side of the screen, the other one the blue wizard on the right. You can either use two Gamepads or a keyboard.
 
-In the bottom of the game screen you see all 6 spells the two wizards know of. Because they have to carry all the ingredients for the hangover cure spell they can only handle 3 spells at a time and have to share. The 3 spells on the left side on the screen are carried by the purple wizard on the left, the 3 on the right by the blue wizard on the right. The red spell with the flame icon is against fire for example. So if a fire is shown on the left side and the player controlling the left wizard does not have the fire-spell he needs to switch something with the other player. The wizards will exchange selected spells shortly before the obstacle is to near.
+In the bottom of the game screen you see all 6 spells the two wizards know of. Because they have to carry all the ingredients for the hangover cure spell they can only handle 3 spells at a time and have to share. The 3 spells on the left side on the screen are carried by the purple wizard on the left, the 3 on the right by the blue wizard on the right. The red spell with the flame icon is against fire for example. So if a fire is shown on the left side and the player controlling the left wizard does not have the fire spell he needs to switch something with the other player for it. The wizards will exchange selected spells shortly before the obstacle is to near.
 
-On the Gamepad you can use the upper 3 keys (square, circle and triangle) to select a spell to switch and the keyboard users have 1, 2, 3 for the left and 8, 9, 0 for the right player. Both players need to select a spell so the wizards will exchange them. If only one spell is selected they will both keep their spells when they hit the obstacle.
+On the Gamepad you can use the upper 3 keys (square, circle and triangle) to select a spell to switch and the keyboard users have 1, 2, 3 for the left and 8, 9, 0 for the right spells. Both player need to select a spell so the wizards will exchange them. If only one spell is selected they will both keep their spells when they hit the obstacle.
 
-Because the player also need to avoid random obstacles like bushes, bottles or drunk party people that lay round on the way of the wizards the player can control his wizard using the thumbstick on the gamepad or the 'a' and 'd' keys for the left wizard as well as the left and right arrow keys for the right one.
+Because the player also need to avoid smaller random obstacles like bushes, bottles or drunk party people that lay lay on their path the player can control his wizard using the thumb stick on the Gamepad or the 'a' and 'd' keys for the left wizard as well as the left and right arrow keys for the right one.
 
 Have fun playing!
 
