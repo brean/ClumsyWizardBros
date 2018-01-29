@@ -44,14 +44,7 @@ public class BGObjectGenerator : MonoBehaviour {
         float spriteX = Random.Range(-500, 500);
         if (spriteX > -StoneSize && spriteX < StoneSize)
         {
-            if (spriteX > 0)
-            {
-                spriteX = StoneSize;
-            }
-            else
-            {
-                spriteX = -StoneSize;
-            }
+            spriteX = spriteX > 0 ? StoneSize : -StoneSize;
         }
 
         Vector3 spritePos = new Vector3(spriteX, 1000, 0);
@@ -60,31 +53,45 @@ public class BGObjectGenerator : MonoBehaviour {
         res.transform.localPosition = spritePos;
         res.transform.Rotate(spriteRot);
 
-        // check if we should appear ontop of some other object
         /*
+        // check if we should appear ontop of some other object and recalculate 
+        // position if needed
         BoxCollider2D spriteCollider = res.GetComponent<BoxCollider2D>();
-        RaycastHit2D hit = Physics2D.BoxCast(
+        if (spriteCollider == null)
+        {
+            return;
+        }
+        Vector2 size = spriteCollider.size;
+        size.x *= bgWrap.transform.lossyScale.x * res.transform.lossyScale.x;
+        size.y *= bgWrap.transform.lossyScale.y * res.transform.lossyScale.y;
+        RaycastHit2D[] hitAll = Physics2D.BoxCastAll(
             new Vector2(
                 res.transform.position.x,
                 res.transform.position.y),
-            spriteCollider.size,
+            size,
             0.0f,
             new Vector2());
-        if (hit.collider != null)
+        foreach (RaycastHit2D hit in hitAll)
         {
-            Debug.Log("REPOSITION!");
-            // we hit sth. reposition!
-            calculatePosition(res);
+            if (hit.collider != null && 
+                hit.collider.transform.gameObject != res)
+            {
+                Debug.Log("REPOSITION!");
+                // we hit sth. reposition!
+                //calculatePosition(res);
+            }
         }
         */
+        
     }
 
 	private GameObject generateGO(int newSprite) {
 		GameObject res = new GameObject ();
 		res.transform.parent = this.bgWrap.transform;
-		res.name = res.GetInstanceID ().ToString ();
+		res.name = res.GetInstanceID().ToString();
 
 		SpriteRenderer sr = res.AddComponent<SpriteRenderer> ();
+        sr.sortingOrder = 2;
 		PositionChecker posChecker = res.AddComponent<PositionChecker> ();
 		BoxCollider2D spriteCollider;
 
