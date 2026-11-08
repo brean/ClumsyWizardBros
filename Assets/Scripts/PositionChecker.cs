@@ -6,6 +6,7 @@ public class PositionChecker : MonoBehaviour {
 	private Vector3 yPosDelta;
 	private string gameObjKey;
 	private int minPos;
+	private float speed = 0.4f;
 
 	// Use this for initialization
 	void Start() {
@@ -23,7 +24,7 @@ public class PositionChecker : MonoBehaviour {
 			Camera.main.GetComponent<BGObjectGenerator> ().removeSprite (this.gameObjKey);
 		}
 
-		this.transform.localPosition -= this.yPosDelta;
+		this.transform.localPosition -= this.yPosDelta * speed;
 	}
 
 	public void setGOKey(string key) {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MapGeneraton : MonoBehaviour {
-    float speed = .66f;
+    float speed = 1f;
 
     [Tooltip("segments we created")]
     private List<KeyValuePair<int, GameObject>> map = new List<KeyValuePair<int, GameObject>>();

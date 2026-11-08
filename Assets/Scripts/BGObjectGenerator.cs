@@ -31,7 +31,7 @@ public class BGObjectGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Time.time - this.lastTimestamp >= 3) {
-			generateGO (Random.Range (0, 5));
+			generateGO(Random.Range (0, 5));
 			this.lastTimestamp = Time.time;
 		}
 	}
